@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class BegdApp extends StatelessWidget {
+  //final AppRouter appRouter = AppRouter();
   const BegdApp({super.key});
 
   @override
