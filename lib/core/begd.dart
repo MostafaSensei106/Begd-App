@@ -1,11 +1,14 @@
+import 'package:begd/core/routing/app_router.dart';
+import 'package:begd/core/routing/routes.dart';
+import 'package:begd/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:toastification/toastification.dart';
 
 class BegdApp extends StatelessWidget {
-  //final AppRouter appRouter = AppRouter();
-  const BegdApp({super.key});
+  final AppRouter appRouter = AppRouter();
+   BegdApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +23,7 @@ class BegdApp extends StatelessWidget {
           darkTheme: ThemeData.dark(),
           themeMode: ThemeMode.system,
           navigatorKey: AppRouter.navigatorKey,
-          initialRoute: Routes.splash,
+          initialRoute: Routes.onBoarding,
           onGenerateRoute: appRouter.generateRoute,
           locale: const Locale('ar', 'EG'),
           supportedLocales: const [Locale('ar', 'EG')],
