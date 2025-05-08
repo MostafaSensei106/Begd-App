@@ -49,7 +49,8 @@ final ThemeData darkTheme = ThemeData(
     surfaceContainerHigh: Color(0xff333232),
     surfaceContainerHighest: Color(0xff3e3d3d),
   ),
-);
+  fontFamily: 'Cairo',
+  );
 
 // DarkThemeHighContrast
 final ThemeData darkThemeHighContrast = ThemeData(
@@ -101,4 +102,6 @@ final ThemeData darkThemeHighContrast = ThemeData(
     surfaceContainerHigh: Color(0xff3c3b3b),
     surfaceContainerHighest: Color(0xff484646),
   ),
+    fontFamily: 'Cairo',
+
 );

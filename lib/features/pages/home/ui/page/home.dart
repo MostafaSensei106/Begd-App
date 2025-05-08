@@ -32,6 +32,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(centerTitle: true, title: const Text(' بجد ولا هبد ')),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -47,4 +48,3 @@ class _HomeState extends State<Home> {
     );
   }
 }
-

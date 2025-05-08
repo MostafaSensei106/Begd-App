@@ -1,3 +1,5 @@
+import 'package:begd/core/config/theme/colors/dark_theme.dart';
+import 'package:begd/core/config/theme/colors/light_theme.dart';
 import 'package:begd/core/routing/app_router.dart';
 import 'package:begd/core/routing/routes.dart';
 import 'package:begd/generated/l10n.dart';
@@ -8,7 +10,7 @@ import 'package:toastification/toastification.dart';
 
 class BegdApp extends StatelessWidget {
   final AppRouter appRouter = AppRouter();
-   BegdApp({super.key});
+  BegdApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +20,9 @@ class BegdApp extends StatelessWidget {
       child: ToastificationWrapper(
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Begd App',
-          theme: ThemeData.light(),
-          darkTheme: ThemeData.dark(),
+          title: 'بِجَدّ وَلّا هَبْد؟',
+          theme: lightTheme,
+          darkTheme: darkTheme,
           themeMode: ThemeMode.system,
           navigatorKey: AppRouter.navigatorKey,
           initialRoute: Routes.onBoarding,
