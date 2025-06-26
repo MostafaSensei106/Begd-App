@@ -30,7 +30,7 @@ class _HomeState extends State<Home> {
     } else if (hour >= 15 && hour < 17) {
       _greeting = 'عصر طيب!';
     } else if (hour >= 17 && hour < 20) {
-      _greeting = 'مساء الخير!';
+      _greeting = 'مساء الفل!';
     } else {
       _greeting = 'مساء هادئ!';
     }
@@ -94,31 +94,56 @@ class _HomeState extends State<Home> {
             children: [
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                padding: EdgeInsets.symmetric(horizontal: Constants.padding.w),
+                padding: EdgeInsets.symmetric(horizontal: Constants.padding.w,
+                    vertical: Constants.padding.h),
                 child: Wrap(
                   spacing: 8.w,
                   children: [
                     ActionChip(
                       mouseCursor: SystemMouseCursors.click,
-                      avatar: Icon(Icons.group),
+                      padding: const EdgeInsets.all(0),
+                      avatar: HugeIcon(
+                        icon: HugeIcons.strokeRoundedTradeUp,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
                       label: Text(
-                        'أكثر الأشخاص هبدآ',
+                        'أكثر الأشخاص هبدا',
                         style: Theme.of(context).textTheme.bodySmall,
                       ),
                       onPressed: () {},
                     ),
                     ActionChip(
-                      avatar: Icon(Icons.question_answer),
+                      padding: const EdgeInsets.all(0),
+                      avatar: HugeIcon(
+                        icon: HugeIcons.strokeRoundedChampion,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
                       label: Text(
-                        'أحسن الإجابات',
+                        'لوحة الشرف',
                         style: Theme.of(context).textTheme.bodySmall,
                       ),
                       onPressed: () {},
                     ),
                     ActionChip(
-                      avatar: Icon(Icons.calendar_today),
+                      padding: const EdgeInsets.all(0),
+                      avatar: HugeIcon(
+                        icon: HugeIcons.strokeRoundedRadioButton,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
                       label: Text(
-                        'أحدث السؤال',
+                        'رادار الهبد',
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
+                      onPressed: () {},
+                    ),
+                    ActionChip(
+                      padding: const EdgeInsets.all(0),
+                      avatar: HugeIcon(
+                        icon: HugeIcons.strokeRoundedInformationCircle,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                      label: Text(
+                        'ادعاءات شائعة',
                         style: Theme.of(context).textTheme.bodySmall,
                       ),
                       onPressed: () {},
