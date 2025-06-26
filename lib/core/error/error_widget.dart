@@ -16,7 +16,7 @@ import 'package:flutter/material.dart';
 ///
 /// The [Material] widget is used to display the error screen when an error
 /// occurs.
-errorWidget() {
+void errorWidget() {
   ErrorWidget.builder = (details) {
     return Material(
       child: Center(

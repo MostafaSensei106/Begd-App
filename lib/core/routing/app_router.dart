@@ -37,7 +37,7 @@ class AppRouter {
     return PageRouteBuilder(
       transitionDuration: const Duration(milliseconds: 250),
       pageBuilder:
-          (_, animation, __) => FadeTransition(
+          (_, animation, _) => FadeTransition(
             opacity: animation,
             child: SlideTransition(
               position: Tween<Offset>(
