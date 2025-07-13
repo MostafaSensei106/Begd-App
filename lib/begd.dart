@@ -51,6 +51,7 @@ class BegdApp extends StatelessWidget {
                 localeResolutionCallback:
                     (locale, supportedLocales) => const Locale('ar', 'EG'),
               );
+              
             },
           ),
         ),

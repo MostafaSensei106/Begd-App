@@ -12,6 +12,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   String _greeting = '';
 
   @override
@@ -32,28 +33,108 @@ class _HomeState extends State<Home> {
     } else if (hour >= 17 && hour < 20) {
       _greeting = 'مساء الفل!';
     } else {
-      _greeting = 'مساء هادئ!';
+      _greeting = 'مساء الفل!';
     }
 
     setState(() {});
   }
 
+  void openDrawer() {
+    HapticFeedback.vibrate();
+    _scaffoldKey.currentState?.openDrawer();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
+
+      drawer: Drawer(
+        backgroundColor: Theme.of(context).colorScheme.surface,
+        width: 0.80.sw,
+        child: ListView(
+          padding: EdgeInsets.only(top: 45.h),
+          children: [
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Flexible(
+                  child: SearchBar(
+                    hintText: 'ابحث هنا',
+                    leading: HugeIcon(
+                      icon: HugeIcons.strokeRoundedSearch01,
+                      color: Theme.of(context).colorScheme.onSurface,
+                    ),
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: HugeIcon(
+                    size: 27,
+                    icon: HugeIcons.strokeRoundedAccountSetting03,
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
+                ),
+              ],
+            ),
+            ListTile(
+              leading: HugeIcon(
+                icon: HugeIcons.strokeRoundedRadar02,
+                color: Theme.of(context).colorScheme.onSurface,
+              ),
+              title: const Text('الرادار'),
+              onTap: () {
+                HapticFeedback.vibrate();
+              },
+            ),
+            ListTile(
+              leading: HugeIcon(
+                icon: HugeIcons.strokeRoundedChatGpt,
+                color: Theme.of(context).colorScheme.onSurface,
+              ),
+              title: const Text('اشهر الادعائات'),
+              onTap: () {
+                HapticFeedback.vibrate();
+              },
+            ),
+            ListTile(
+              leading: HugeIcon(
+                icon: HugeIcons.strokeRoundedChatGpt,
+                color: Theme.of(context).colorScheme.onSurface,
+              ),
+              title: const Text('لوحة المتصدرين'),
+              onTap: () {
+                HapticFeedback.vibrate();
+              },
+            ),
+            ListTile(
+              leading: HugeIcon(
+                icon: HugeIcons.strokeRoundedChatGpt,
+                color: Theme.of(context).colorScheme.onSurface,
+              ),
+              title: const Text('تغير المظهر'),
+              onTap: () {
+                HapticFeedback.vibrate();
+              },
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text('أخر عمليات التحقق'),
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         centerTitle: true,
         title: const Text(' بجد ولا هبد '),
         leading: IconButton(
-          onPressed: () {
-            HapticFeedback.vibrate();
-          },
+          onPressed: openDrawer,
           icon: HugeIcon(
             icon: HugeIcons.strokeRoundedMenu11,
             color: Theme.of(context).colorScheme.onSurface,
           ),
         ),
-
         actions: [
           IconButton.filledTonal(
             onPressed: () {},
@@ -94,8 +175,7 @@ class _HomeState extends State<Home> {
             children: [
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                padding: EdgeInsets.symmetric(horizontal: Constants.padding.w,
-                    vertical: Constants.padding.h),
+                padding: EdgeInsets.symmetric(horizontal: Constants.padding.w),
                 child: Wrap(
                   spacing: 8.w,
                   children: [
@@ -178,13 +258,6 @@ class _HomeState extends State<Home> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          IconButton(
-                            icon: HugeIcon(
-                              icon: HugeIcons.strokeRoundedImage03,
-                              color: Theme.of(context).colorScheme.primary,
-                            ),
-                            onPressed: () {},
-                          ),
                           IconButton(
                             icon: HugeIcon(
                               icon: HugeIcons.strokeRoundedSettings04,
